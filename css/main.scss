@@ -1,0 +1,307 @@
+body {
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+// Фоновое изображение
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../img/background_image.png');
+    background-size: cover;
+    width: 100%;
+    height: 150vh;
+    z-index: -1;
+    filter: brightness(50%);
+}
+
+// Шапка сайта
+header {
+    a {
+        text-decoration: none;
+    }    
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    svg {
+        width: 2.5em;
+        margin-top: -4em;
+        margin-right: 1.5em;
+        cursor: pointer;
+    }
+}
+
+// Меню
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: rgba(0, 25, 40, 0.9);
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+        a, .dropbtn {
+            color: white;
+            padding: .75em 2em;
+            display: block;
+            &:hover {
+                background: rgb(19, 69, 94);
+            }
+        }
+    }
+    .close {
+        float: right;
+        margin: 2em;
+        width: 2.5em;
+
+    }
+}
+
+// Подпункты пунктов меню
+.dropdown-content {
+    display: none;
+    background-color: rgb(24, 94, 143);
+}
+
+// Отображение подпунктов в меню
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+// Открывающееся и закрывающееся меню в мобильной версии
+.open-nav {
+    transform: translateX(0%);
+}
+
+// Заголовки
+h1 {
+    font-size: 2.7rem;
+    line-height: 3rem;
+    font-family: 'Bahnschrift Light', sans-serif;
+}
+
+//Подзаголовок
+.subhead {
+    margin-top: -1em;
+    font-size: 1.2rem;
+}
+
+// Главный экран
+section.hero {
+    color: white;
+    height: 100vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+    text-align: center;
+    img {
+        width: 2em;
+    }
+}
+
+// Форма для заявки
+form {
+    background-color: rgb(20, 80, 107);
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    fieldset {
+        border: none;
+    }
+    legend {
+        text-align: center;
+        font-size: 1.5rem;
+        padding-top: .7em;
+    }
+    div {
+        display: inline-block;
+        margin: .5em;
+    }
+
+}
+
+// Изображения в рекламе
+.ad img {
+    margin-top: 2.5em;
+    width: 20vw;
+}
+
+// Расположение изображений и описаний в основной части главной страницы
+.cottages-list, .buildings-list, .excursions-list {
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    align-items: center;
+    justify-content: space-around;
+}
+.cottages span, .buildings span, .excursions span {
+    display: grid;
+    justify-items: center;
+    background-color: white;
+    margin-inline: .2em;
+    width: 30.5vw;
+}
+.cottages span img, .buildings span img, .excursions span img {
+    object-fit: cover;
+    margin-top: .2em;
+    height: 30vh;
+    width: 30vw;
+
+}
+
+// Ответы на вопросы
+section.answers {
+    position: absolute;
+    left: 0;
+    background-color: rgb(25, 52, 66);
+    color: white;
+    width: 100%;
+    line-height: 3rem;
+    h1 {
+        text-align: center;
+    }
+    details {
+        font-size: 1.5rem;
+        margin-left: 2em;
+        margin-right: 2em;
+        p, br {
+            background-color: rgb(35, 73, 96);
+            font-size: 1.3rem;
+        }
+        summary:hover {
+            color: gray;
+        }
+    }
+    z-index: 5;
+}
+
+// Подвал страницы с контактами и картой сайта
+section.footer {
+    a {
+        color: white;
+    }
+    position: absolute;
+    left: 0;
+    background-color: rgb(25, 52, 66);
+    color: white;
+    width: 100%;
+    line-height: 2.5rem;
+    margin-top: 20em;
+    height: 180vh;
+	white-space: nowrap;
+    p, br {
+        font-size: 1.3rem;
+        margin-right: 5em;
+    }
+    li {
+        font-size: 2rem;
+    }
+    .colon {
+        margin-top: 10em;
+        white-space: normal;	
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+        ul {
+            list-style-type: none;
+            line-height: 3rem;
+        }
+        .contacts {
+            font-size: 1.7rem;
+            margin-top: -1em;
+        }
+    }
+    z-index: 4;
+}
+.footer .colon:first-child {
+	margin-right: 4%;
+}
+
+// Стрелка в начало страницы
+#toTop {
+    width:100px;
+    padding:5px;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    cursor:pointer;
+    display:none;
+    z-index: 900;
+}
+
+@media only screen and (min-width: 680px) {
+    body {
+        margin: 1.5em 5em;
+    }
+    .cottages span img {
+        height: 50vh;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .menu {
+        display: none;
+    }
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+    }
+    nav ul {
+        display: flex;
+        margin: 0;
+        a, .dropbtn {
+            color: white;
+            padding: .5em 1.5em;
+            font-size: 1.1rem;
+            &:hover {
+                background: rgb(0, 25, 40);
+            }
+        }
+    }
+
+    .dropdown-content {
+        position: absolute;
+    }
+
+    section.hero {
+        height: auto;
+        width: 100%;
+        margin-bottom: 8em;
+        h1 {
+            font-size: 4.2rem;
+            line-height: 5rem;
+        }
+    }
+    .subhead {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

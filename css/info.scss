@@ -1,0 +1,44 @@
+body {
+    font-family: 'Bahnschrift', sans-serif;
+    color: white;
+    background-color: rgb(25, 52, 66);
+    text-align: justify;
+    display: inline-block;
+}
+
+.hero-img {
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    background: url('../img/info7.jpg');
+    background-size: cover;
+    // background-position-x: 20%;
+    // background-position-y: 20%;
+    width: 45%;
+    height: 65vh;
+    z-index: -1;
+}
+
+h1, span {
+    font-family: 'Bahnschrift Light', sans-serif;
+    font-size: 3.5em;
+}
+// p {
+//     left: 0;
+//     right: unset;
+//     width: 50%;
+// }
+.container {
+    left: 0;
+    right: unset;
+    width: 50%;
+}
+
+a {
+    color: white;
+    margin: 2em;
+}
+
+// img {
+//     height: 50vh;
+// }
